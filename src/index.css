@@ -1,0 +1,57 @@
+:root {
+  font-family: 'Karla', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #293264;
+  background-color: #F5F7FB;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+
+.card__answer--container {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card__answer--button {
+  color: #293264;
+  border: #4D5B9E solid 1px;
+  border-radius: 8px;
+  font-size: 1em;
+  padding: 5px;
+  background-color: transparent;
+}
+
+.default__button {
+  font-size: 1.125rem;
+  border: none;
+  border-radius: 8px;
+  height: 50px;
+  width: 200px;
+  background-color: #4D5B9E;
+  color: #F5F7FB;
+}
+
+.selected {
+  background-color: purple;
+}
+
+.correct {
+  border-color: green;
+  border-width: 4px;
+}
+
+.incorrect {
+  border-color: red;
+  border-width: 4px;
+}
