@@ -30,18 +30,17 @@ function Check({ handleCheck }) {
 }
 
 function Card({ question, answers, correctAnswer, setQuestion, usersAnswer, check }) {
+
   function selectedAnswer(usersAnswer, answer) {
-    if (usersAnswer) {
-      if (usersAnswer === answer) {
-        return 'selected'
-      } else {
-        return ''
-      }
+    if (usersAnswer === answer && !check) {
+      return 'selected'
+    } else {
+      return ''
     }
   }
 
   function answerClass(correctAnswer, usersAnswer, answer) {
-    if (usersAnswer) {
+    if (check) {
       if (usersAnswer == correctAnswer && usersAnswer == answer) return "correct"
       if (usersAnswer !== correctAnswer && usersAnswer == answer) return "incorrect"
       if (answer == correctAnswer) return "correct"
@@ -49,15 +48,16 @@ function Card({ question, answers, correctAnswer, setQuestion, usersAnswer, chec
       return ''
     }
   }
+
+
   return (
-    // ${answerClass(correctAnswer, usersAnswer, answer)}
     <>
       <div className='card__container'>
         <h3 className='card__question'>{question}</h3>
         <ul className='card__answer--container'>{answers.map((answer, index) => (
-          <li key={nanoid()}>
+          <li key={index}>
             <button
-              className={`card__answer--button ${check ? answerClass(correctAnswer, usersAnswer, answer) : ''}`}
+              className={`answer__button ${selectedAnswer(usersAnswer, answer)} ${answerClass(correctAnswer, usersAnswer, answer)}`}
               onClick={() => { setQuestion(question, answer) }}>
               {answer}
             </button>
@@ -129,7 +129,6 @@ function Game({ flipHomeScreen }) {
   return (
     <>
       {questions.items?.map((item, index) => (
-        // console.log(index),
         < Card
           key={index}
           question={item.question}
@@ -137,6 +136,7 @@ function Game({ flipHomeScreen }) {
           correctAnswer={item.correctAnswer}
           usersAnswer={item.usersAnswer}
           setQuestion={setQuestion}
+          check={check}
         />
       ))}
       {!check ?

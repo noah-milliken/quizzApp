@@ -42,16 +42,23 @@ body {
   color: #F5F7FB;
 }
 
+.answer__button {
+  color: #293264;
+  background-color: transparent;
+  border: #4D5B9E solid 1px;
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+
 .selected {
-  background-color: purple;
+  background-color: #D6DBF5;
 }
 
 .correct {
-  border-color: green;
-  border-width: 4px;
+  background-color: #94D7A2;
 }
 
 .incorrect {
-  border-color: red;
-  border-width: 4px;
+  background-color: #F8BCBC;
+
 }
