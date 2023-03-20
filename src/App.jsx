@@ -161,6 +161,8 @@ function App() {
   }
   return (
     <>
+      <img className='blob blob__blue' src="public/images/blue-blob.svg" alt="" />
+      <img className='blob blob__yellow ' src="public/images/yellow-blob.svg" alt="" />
       {homeScreen ?
         <HomeScreen flipHomeScreen={flipHomeScreen} /> :
         <Game flipHomeScreen={flipHomeScreen} />

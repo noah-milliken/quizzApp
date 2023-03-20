@@ -62,3 +62,19 @@ body {
   background-color: #F8BCBC;
 
 }
+
+.blob {
+  position: absolute;
+  z-index: -1;
+}
+
+.blob__yellow {
+  top: -100px;
+  right: -100px;
+
+}
+
+.blob__blue {
+  bottom: -100px;
+  left: -100px;
+}
